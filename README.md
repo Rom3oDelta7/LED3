@@ -5,7 +5,6 @@ With a common anode LED, the MCU is a current sink. You have a common anode that
 In both cases, be sure to have a current limiting resistor on each of the red, green, and blue lines between the MCU and the LED.
 (See [LEDCALC] for an online tool to help you determine the current resistor to use).
 
-You have the option of specifying the type of LED as well as the analog write PWM resolution for your MCU.
 
 # Programming Interface
 ## Constructors
@@ -20,6 +19,7 @@ LED3 (const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED,  cons
 ```
 Use this constructor to declare a common cathode LED.
 Choices for the _mode_ parameter are:
+
 |Parameter|Purpose|
 |---|---|
 **LED3_CATHODE**|common cathode
@@ -34,6 +34,7 @@ void setLED3Color ( const uint32_t color );
 Sets the LED _color_ to the specified RGB value. Values are created by using a 24-bit value,
 with the most significant byte (byte 2) representing red, byte 1 representing green, and the least significant byte (byte 0) representing blue.
 The following colors are predefined:
+
 |Color|Hexadecimal value|
 |---|---|
 LED3_RED|0xFF0000
