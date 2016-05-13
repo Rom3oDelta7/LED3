@@ -1,0 +1,30 @@
+#######################################
+# Syntax Coloring Map For LED3 Library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+LED3	KEYWORD1
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+setLED3color	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+LED3_RED		LITERAL1
+LED3_GREEN		LITERAL1
+LED3_BLUE		LITERAL1
+LED3_MAGENTA	LITERAL1
+LED3_YELLOW		LITERAL1
+LED3_CYAN		LITERAL1
+LED3_WHITE		LITERAL1
+LED3_ORANGE		LITERAL1
+LED3_PURPLE		LITERAL1
+LED3_OFF		LITERAL1
