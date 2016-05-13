@@ -17,21 +17,14 @@
 #define GREEN_PIN	14			// make sure there is a current limiting resistor attached to each color lead
 #define BLUE_PIN	16
 
-#if defined(ARDUINO_ARCH_AVR)
-#define RESOLUTION	255
-#elif defined(ESP8266)
-#define RESOLUTION 	1023
-#endif
-
 uint32_t	colors[] = {LED3_RED, LED3_GREEN, LED3_BLUE, LED3_MAGENTA, LED3_CYAN, LED3_WHITE, LED3_ORANGE, LED3_PURPLE, LED3_OFF};
 
-LED3		led(RED_PIN, GREEN_PIN, BLUE_PIN, LED3_CATHODE, RESOLUTION);
-//LED3		led(RED_PIN, GREEN_PIN, BLUE_PIN, LED3_ANODE, RESOLUTION);
+LED3		led(RED_PIN, GREEN_PIN, BLUE_PIN, LED3_CATHODE);
+//LED3		led(RED_PIN, GREEN_PIN, BLUE_PIN);						// constructor for common anode
 
 void setup ( void ) {
 	Serial.begin(9600);
 	while (!Serial);
-	Serial.print("PWM resolution set to "); Serial.println(RESOLUTION); Serial.println("");
 }
 
 void loop ( void ) {

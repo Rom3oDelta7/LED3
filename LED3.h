@@ -24,7 +24,7 @@ Copyright 2016 Rob Redford
 #define LED3_RED		0xFF0000
 #define LED3_GREEN		0x00FF00
 #define LED3_BLUE		0x0000FF
-#define LED3_MAGENTA	0xFF0088
+#define LED3_MAGENTA	0xFF0090
 #define LED3_CYAN		0x00FFFF
 #define LED3_WHITE		0xFFFFFF
 #define LED3_ORANGE		0xFF8600
@@ -38,7 +38,6 @@ class LED3 {
 public:
 	LED3 (const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED);
 	LED3 (const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED,  const LED3Mode mode);
-	LED3 (const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED,  const LED3Mode mode, const int pwmResolution);
 	void setLED3Color ( const uint32_t color );
 private:
 	LED3Mode	_MODE;				// type of LED (common cathode/anode)
@@ -50,7 +49,11 @@ private:
 
 LED3::LED3 ( const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED) {
 	_MODE = LED3_ANODE;								// default
-	_RESOLUTION = PWM_MIN_RESOLUTION;				// default
+#ifdef ESP8266
+	_RESOLUTION = PWMRANGE;
+#else
+	_RESOLUTION = PWM_MIN_RESOLUTION;
+#endif
 	_LED_RED_PIN = redLED;
 	_LED_GREEN_PIN = greenLED;
 	_LED_BLUE_PIN = blueLED;
@@ -58,23 +61,16 @@ LED3::LED3 ( const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED
 	pinMode(_LED_RED_PIN, OUTPUT);
 	pinMode(_LED_GREEN_PIN, OUTPUT);
 	pinMode(_LED_BLUE_PIN, OUTPUT);
+
 }
 
 LED3::LED3 ( const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED,  const LED3Mode mode) {
 	_MODE = mode;
-	_RESOLUTION = PWM_MIN_RESOLUTION;			// default
-	_LED_RED_PIN = redLED;
-	_LED_GREEN_PIN = greenLED;
-	_LED_BLUE_PIN = blueLED;
-	
-	pinMode(_LED_RED_PIN, OUTPUT);
-	pinMode(_LED_GREEN_PIN, OUTPUT);
-	pinMode(_LED_BLUE_PIN, OUTPUT);
-}
-
-LED3::LED3 ( const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED,  const LED3Mode mode, const int pwmResolution) {
-	_MODE = mode;
-	_RESOLUTION = constrain(pwmResolution, PWM_MIN_RESOLUTION, PWM_MAX_RESOLUTION);
+#ifdef ESP8266
+	_RESOLUTION = PWMRANGE;
+#else
+	_RESOLUTION = PWM_MIN_RESOLUTION;
+#endif
 	_LED_RED_PIN = redLED;
 	_LED_GREEN_PIN = greenLED;
 	_LED_BLUE_PIN = blueLED;
