@@ -45,6 +45,7 @@ LED3_WHITE|0xFFFFFF
 LED3_ORANGE|0xFF8600
 LED3_PURPLE|0x7700FF
 LED3_OFF|0x000000
+
 To turn the LED off, set the color to **LED_OFF** or just _0_.
 
 
