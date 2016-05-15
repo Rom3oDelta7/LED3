@@ -22,8 +22,8 @@ Choices for the _mode_ parameter are:
 
 |Parameter|Purpose|
 |---|---|
-**LED3_CATHODE**|common cathode
-**LED3_ANODE**|common anode
+|**LED3_CATHODE**|common cathode|
+|**LED3_ANODE**|common anode|
 
 The **LED_ANODE** mode is not strictly necessary but is included for completeness.
 
@@ -37,14 +37,14 @@ The following colors are predefined:
 
 |Color|Hexadecimal value|
 |---|---|
-LED3_RED|0xFF0000
-LED3_GREEN|0x00FF00
-LED3_BLUE|0x0000FF
-LED3_CYAN|0x00FFFF
-LED3_WHITE|0xFFFFFF
-LED3_ORANGE|0xFF8600
-LED3_PURPLE|0x7700FF
-LED3_OFF|0x000000
+|LED3_RED|0xFF0000|
+|LED3_GREEN|0x00FF00|
+|LED3_BLUE|0x0000FF|
+|LED3_CYAN|0x00FFFF|
+|LED3_WHITE|0xFFFFFF|
+|LED3_ORANGE|0xFF8600|
+|LED3_PURPLE|0x7700FF|
+|LED3_OFF|0x000000|
 
 To turn the LED off, set the color to **LED_OFF** or just _0_.
 
