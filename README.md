@@ -55,9 +55,8 @@ To turn the LED off, set the color to **LED_OFF** or just _0_.
 
 # Installation
 
-There is still no Zip download button in Bitbucket (at least not that I can find) so to install this library,
-click on the "Downloads" link on the left side menu and "Download Repository" on the next page.
-This will download a .zip file that you can install by using the "Include Library>Add .ZIP Library" menu commands in the Arduino IDE.
+Go to Releases and download the latest release .zip archive.
+Install by using the "Sketch > Include Library > Add .ZIP Library..." menu commands in the Arduino IDE.
 
 Of course, you may also clone this repository and manually install the files if you prefer.
 
