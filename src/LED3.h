@@ -43,12 +43,14 @@ public:
 	LED3 (const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED,  const LED3Mode mode);
 	LED3 (const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED,  const LED3Mode mode, const int pwmResolution);
 	void setLED3Color ( const uint32_t color );
+	uint32_t getLED3Color ( void );
 private:
 	LED3Mode		_MODE;				// typ of LED (common cathode/anode)
 	uint16_t		_RESOLUTION;		// PWM resolution of the GPIO port
 	uint8_t		_LED_RED_PIN;		// LED pins
 	uint8_t		_LED_GREEN_PIN;
 	uint8_t		_LED_BLUE_PIN;
+	uint32_t		_currentColor;
 };
 
 #endif

@@ -15,7 +15,7 @@ Copyright 2016 Rob Redford
 
 LED3::LED3 ( const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED) {
 	_MODE = LED3_ANODE;								// default
-	_RESOLUTION = PWM_MIN_RESOLUTION;				// default
+	_RESOLUTION = PWM_MIN_RESOLUTION;			// default
 	_LED_RED_PIN = redLED;
 	_LED_GREEN_PIN = greenLED;
 	_LED_BLUE_PIN = blueLED;
@@ -52,6 +52,7 @@ LED3::LED3 ( const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED
 void LED3::setLED3Color ( const uint32_t color ) {
 	uint8_t redPWM, greenPWM, bluePWM;
 	
+	_currentColor = color;
 	redPWM   = (color & 0xFF0000) >> 16;
 	greenPWM = (color & 0xFF00) >> 8;
 	bluePWM   = (color & 0xFF);
@@ -69,4 +70,8 @@ void LED3::setLED3Color ( const uint32_t color ) {
 	analogWrite(_LED_RED_PIN, redPWM);
 	analogWrite(_LED_GREEN_PIN, greenPWM);
 	analogWrite(_LED_BLUE_PIN, bluePWM);
+}
+
+uint32_t LED3::getLED3Color ( void ) {
+	return _currentColor;
 }

@@ -48,6 +48,11 @@ The following colors are predefined:
 
 To turn the LED off, set the color to **LED_OFF** or just _0_.
 
+```C++
+uint32_t getLED3Color ( void );
+```
+Returns the last color that was set with ```setLED3color```.
+
 
 # Examples
 1. _LightCycle.ino_: Runs through the standard colors, switches off, then cycles again.
