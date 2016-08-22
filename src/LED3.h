@@ -50,7 +50,7 @@ private:
 	uint8_t		_LED_RED_PIN;		// LED pins
 	uint8_t		_LED_GREEN_PIN;
 	uint8_t		_LED_BLUE_PIN;
-	uint32_t		_currentColor;
+	uint32_t		_CURRENT_COLOR;
 };
 
 #endif

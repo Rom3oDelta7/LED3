@@ -19,6 +19,7 @@ LED3::LED3 ( const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED
 	_LED_RED_PIN = redLED;
 	_LED_GREEN_PIN = greenLED;
 	_LED_BLUE_PIN = blueLED;
+	_CURRENT_COLOR = LED3_OFF;
 	
 	pinMode(_LED_RED_PIN, OUTPUT);
 	pinMode(_LED_GREEN_PIN, OUTPUT);
@@ -31,6 +32,7 @@ LED3::LED3 ( const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED
 	_LED_RED_PIN = redLED;
 	_LED_GREEN_PIN = greenLED;
 	_LED_BLUE_PIN = blueLED;
+	_CURRENT_COLOR = LED3_OFF;
 	
 	pinMode(_LED_RED_PIN, OUTPUT);
 	pinMode(_LED_GREEN_PIN, OUTPUT);
@@ -43,6 +45,7 @@ LED3::LED3 ( const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED
 	_LED_RED_PIN = redLED;
 	_LED_GREEN_PIN = greenLED;
 	_LED_BLUE_PIN = blueLED;
+	_CURRENT_COLOR = LED3_OFF;
 	
 	pinMode(_LED_RED_PIN, OUTPUT);
 	pinMode(_LED_GREEN_PIN, OUTPUT);
@@ -52,7 +55,7 @@ LED3::LED3 ( const uint8_t redLED, const uint8_t greenLED, const uint8_t blueLED
 void LED3::setLED3Color ( const uint32_t color ) {
 	uint8_t redPWM, greenPWM, bluePWM;
 	
-	_currentColor = color;
+	_CURRENT_COLOR = color;
 	redPWM   = (color & 0xFF0000) >> 16;
 	greenPWM = (color & 0xFF00) >> 8;
 	bluePWM   = (color & 0xFF);
@@ -73,5 +76,5 @@ void LED3::setLED3Color ( const uint32_t color ) {
 }
 
 uint32_t LED3::getLED3Color ( void ) {
-	return _currentColor;
+	return _CURRENT_COLOR;
 }
